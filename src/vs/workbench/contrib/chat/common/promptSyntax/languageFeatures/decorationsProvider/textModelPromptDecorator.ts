@@ -3,21 +3,21 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { IPromptsService } from '../service/types.js';
-import { assert } from '../../../../../../base/common/assert.js';
-import { chatSlashCommandBackground } from '../../chatColors.js';
-import { PromptAtMention } from '../codecs/tokens/promptAtMention.js';
-import { assertDefined } from '../../../../../../base/common/types.js';
-import { IEditor } from '../../../../../../editor/common/editorCommon.js';
-import { TextModelPromptParser } from '../parsers/textModelPromptParser.js';
-import { Position } from '../../../../../../editor/common/core/position.js';
-import { BaseToken } from '../../../../../../editor/common/codecs/baseToken.js';
-import { AtMentionDecorator } from './textModelPromptDecorator/atMentionDecorator.js';
-import { ObservableDisposable } from '../../../../../../base/common/observableDisposable.js';
-import { ReactiveDecorationBase } from './textModelPromptDecorator/reactiveDecorationBase.js';
-import { FrontMatterDecoration } from './textModelPromptDecorator/frontMatterHeaderDecoration.js';
-import { registerThemingParticipant } from '../../../../../../platform/theme/common/themeService.js';
-import { FrontMatterHeaderToken } from '../../../../../../editor/common/codecs/markdownExtensionsCodec/tokens/frontMatterHeaderToken.js';
+import { IPromptsService } from '../../service/types.js';
+import { assert } from '../../../../../../../base/common/assert.js';
+import { chatSlashCommandBackground } from '../../../chatColors.js';
+import { PromptAtMention } from '../../codecs/tokens/promptAtMention.js';
+import { assertDefined } from '../../../../../../../base/common/types.js';
+import { AtMentionDecoration } from './decorations/atMentionDecoration.js';
+import { IEditor } from '../../../../../../../editor/common/editorCommon.js';
+import { Position } from '../../../../../../../editor/common/core/position.js';
+import { TextModelPromptParser } from '../../parsers/textModelPromptParser.js';
+import { ReactiveDecorationBase } from './decorations/reactiveDecorationBase.js';
+import { BaseToken } from '../../../../../../../editor/common/codecs/baseToken.js';
+import { FrontMatterDecoration } from './decorations/frontMatterHeaderDecoration.js';
+import { ObservableDisposable } from '../../../../../../../base/common/observableDisposable.js';
+import { registerThemingParticipant } from '../../../../../../../platform/theme/common/themeService.js';
+import { FrontMatterHeaderToken } from '../../../../../../../editor/common/codecs/markdownExtensionsCodec/tokens/frontMatterHeaderToken.js';
 
 /**
  * TODO: @legomushroom - list
@@ -174,7 +174,7 @@ export class TextModelPromptDecorator extends ObservableDisposable {
 
 				if (token instanceof PromptAtMention) {
 					this.decorations.push(
-						new AtMentionDecorator(token, {
+						new AtMentionDecoration(token, {
 							register,
 							cursorPosition,
 						}),
@@ -244,6 +244,6 @@ registerThemingParticipant((theme, collector) => {
 		`${defaultCssSelector} { ${styles.join(' ')} }`,
 	);
 
-	AtMentionDecorator.registerCssStyles(theme, collector);
+	AtMentionDecoration.registerCssStyles(theme, collector);
 	FrontMatterDecoration.registerCssStyles(theme, collector);
 });

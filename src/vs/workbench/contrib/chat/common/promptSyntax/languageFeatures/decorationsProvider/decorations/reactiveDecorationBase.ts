@@ -3,12 +3,12 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { Position } from '../../../../../../../editor/common/core/position.js';
-import { IMarkdownString } from '../../../../../../../base/common/htmlContent.js';
-import { BaseToken } from '../../../../../../../editor/common/codecs/baseToken.js';
-import { ModelDecorationOptions } from '../../../../../../../editor/common/model/textModel.js';
-import { ObservableDisposable } from '../../../../../../../base/common/observableDisposable.js';
-import { IModelDecorationsChangeAccessor, TrackedRangeStickiness } from '../../../../../../../editor/common/model.js';
+import { Position } from '../../../../../../../../editor/common/core/position.js';
+import { IMarkdownString } from '../../../../../../../../base/common/htmlContent.js';
+import { BaseToken } from '../../../../../../../../editor/common/codecs/baseToken.js';
+import { ModelDecorationOptions } from '../../../../../../../../editor/common/model/textModel.js';
+import { ObservableDisposable } from '../../../../../../../../base/common/observableDisposable.js';
+import { IModelDecorationsChangeAccessor, TrackedRangeStickiness } from '../../../../../../../../editor/common/model.js';
 
 /**
  * TODO: @legomushroom

@@ -3,15 +3,15 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize } from '../../../../../../../nls.js';
-import { Color } from '../../../../../../../base/common/color.js';
-import { PromptAtMention } from '../../codecs/tokens/promptAtMention.js';
-import { MarkdownString } from '../../../../../../../base/common/htmlContent.js';
-import { chatRequestBorder, chatSlashCommandBackground } from '../../../chatColors.js';
-import { registerColor } from '../../../../../../../platform/theme/common/colorUtils.js';
-import { badgeForeground } from '../../../../../../../platform/theme/common/colorRegistry.js';
+import { localize } from '../../../../../../../../nls.js';
+import { Color } from '../../../../../../../../base/common/color.js';
+import { PromptAtMention } from '../../../codecs/tokens/promptAtMention.js';
+import { MarkdownString } from '../../../../../../../../base/common/htmlContent.js';
+import { chatRequestBorder, chatSlashCommandBackground } from '../../../../chatColors.js';
+import { registerColor } from '../../../../../../../../platform/theme/common/colorUtils.js';
+import { badgeForeground } from '../../../../../../../../platform/theme/common/colorRegistry.js';
 import { IReactiveDecorationOptions, ReactiveDecorationBase } from './reactiveDecorationBase.js';
-import { IColorTheme, ICssStyleCollector } from '../../../../../../../platform/theme/common/themeService.js';
+import { IColorTheme, ICssStyleCollector } from '../../../../../../../../platform/theme/common/themeService.js';
 
 /**
  * Decoration CSS class names.
@@ -31,7 +31,7 @@ interface IOptions extends Pick<IReactiveDecorationOptions, 'cursorPosition' | '
 /**
  * TODO: @legomushroom
  */
-export class AtMentionDecorator extends ReactiveDecorationBase<PromptAtMention> {
+export class AtMentionDecoration extends ReactiveDecorationBase<PromptAtMention> {
 	constructor(
 		token: PromptAtMention,
 		options: IOptions,

@@ -8,9 +8,9 @@ import { isWindows } from '../../../../../../base/common/platform.js';
 import { PromptPathAutocompletion } from './promptPathAutocompletion.js';
 import { Registry } from '../../../../../../platform/registry/common/platform.js';
 import { LifecyclePhase } from '../../../../../services/lifecycle/common/lifecycle.js';
-import { PromptDecoratorsInstanceManager } from './promptDecoratorsInstanceManager.js';
 import { PromptLinkDiagnosticsInstanceManager } from './promptLinkDiagnosticsProvider.js';
 import { BrandedService } from '../../../../../../platform/instantiation/common/instantiation.js';
+import { PromptDecoratorsInstanceManager } from './decorationsProvider/promptDecoratorsInstanceManager.js';
 import { IWorkbenchContribution, IWorkbenchContributionsRegistry, Extensions as WorkbenchExtensions } from '../../../../../common/contributions.js';
 
 /**

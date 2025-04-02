@@ -4,11 +4,11 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { TextModelPromptDecorator } from './textModelPromptDecorator.js';
-import { IEditor } from '../../../../../../editor/common/editorCommon.js';
-import { isPromptFile } from '../../../../../../platform/prompts/common/constants.js';
-import { Disposable, DisposableMap } from '../../../../../../base/common/lifecycle.js';
-import { IEditorService } from '../../../../../services/editor/common/editorService.js';
-import { IInstantiationService } from '../../../../../../platform/instantiation/common/instantiation.js';
+import { IEditor } from '../../../../../../../editor/common/editorCommon.js';
+import { isPromptFile } from '../../../../../../../platform/prompts/common/constants.js';
+import { Disposable, DisposableMap } from '../../../../../../../base/common/lifecycle.js';
+import { IEditorService } from '../../../../../../services/editor/common/editorService.js';
+import { IInstantiationService } from '../../../../../../../platform/instantiation/common/instantiation.js';
 
 /**
  * TODO: @legomushroom - add unit tests

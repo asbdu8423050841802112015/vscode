@@ -3,13 +3,13 @@
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 
-import { localize } from '../../../../../../../nls.js';
-import { Color, RGBA } from '../../../../../../../base/common/color.js';
-import { MarkdownString } from '../../../../../../../base/common/htmlContent.js';
+import { localize } from '../../../../../../../../nls.js';
+import { Color, RGBA } from '../../../../../../../../base/common/color.js';
+import { MarkdownString } from '../../../../../../../../base/common/htmlContent.js';
 import { IReactiveDecorationOptions, ReactiveDecorationBase } from './reactiveDecorationBase.js';
-import { contrastBorder, registerColor } from '../../../../../../../platform/theme/common/colorRegistry.js';
-import { IColorTheme, ICssStyleCollector } from '../../../../../../../platform/theme/common/themeService.js';
-import { FrontMatterHeaderToken } from '../../../../../../../editor/common/codecs/markdownExtensionsCodec/tokens/frontMatterHeaderToken.js';
+import { contrastBorder, registerColor } from '../../../../../../../../platform/theme/common/colorRegistry.js';
+import { IColorTheme, ICssStyleCollector } from '../../../../../../../../platform/theme/common/themeService.js';
+import { FrontMatterHeaderToken } from '../../../../../../../../editor/common/codecs/markdownExtensionsCodec/tokens/frontMatterHeaderToken.js';
 
 /**
  * Decoration CSS class names.
