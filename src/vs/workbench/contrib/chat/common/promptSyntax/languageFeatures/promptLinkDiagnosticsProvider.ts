@@ -13,13 +13,10 @@ import { Disposable } from '../../../../../../base/common/lifecycle.js';
 import { IEditor } from '../../../../../../editor/common/editorCommon.js';
 import { ObjectCache } from '../../../../../../base/common/objectCache.js';
 import { TextModelPromptParser } from '../parsers/textModelPromptParser.js';
-import { Registry } from '../../../../../../platform/registry/common/platform.js';
 import { PromptsConfig } from '../../../../../../platform/prompts/common/config.js';
 import { isPromptFile } from '../../../../../../platform/prompts/common/constants.js';
-import { LifecyclePhase } from '../../../../../services/lifecycle/common/lifecycle.js';
 import { IEditorService } from '../../../../../services/editor/common/editorService.js';
 import { ObservableDisposable } from '../../../../../../base/common/observableDisposable.js';
-import { IWorkbenchContributionsRegistry, Extensions } from '../../../../../common/contributions.js';
 import { IInstantiationService } from '../../../../../../platform/instantiation/common/instantiation.js';
 import { IConfigurationService } from '../../../../../../platform/configuration/common/configuration.js';
 import { IMarkerData, IMarkerService, MarkerSeverity } from '../../../../../../platform/markers/common/markers.js';
@@ -140,7 +137,7 @@ const toMarker = (
  * The class that manages creation and disposal of {@link PromptLinkDiagnosticsProvider}
  * classes for each specific editor text model.
  */
-class PromptLinkDiagnosticsInstanceManager extends Disposable {
+export class PromptLinkDiagnosticsInstanceManager extends Disposable {
 	/**
 	 * Currently available {@link PromptLinkDiagnosticsProvider} instances.
 	 */
@@ -218,7 +215,3 @@ class PromptLinkDiagnosticsInstanceManager extends Disposable {
 		return this;
 	}
 }
-
-// register the provider as a workbench contribution
-Registry.as<IWorkbenchContributionsRegistry>(Extensions.Workbench)
-	.registerWorkbenchContribution(PromptLinkDiagnosticsInstanceManager, LifecyclePhase.Eventually);
